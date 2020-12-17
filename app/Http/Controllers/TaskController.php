@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
+use App\Models\Task;
+use App\Repositories\TaskRepository;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TaskController extends Controller
 {
@@ -15,4 +19,9 @@ class TaskController extends Controller
     {
         $this->middleware('auth');
     }
+    public function index(Request $request)
+    {
+        return view('tasks.index');
+    }
+
 }
