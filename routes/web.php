@@ -16,9 +16,9 @@ use App\Http\Controllers\TaskController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/tasks', [TaskController::class,'index']);
-Route::post('/task', [TaskController::class,'store']);
-Route::delete('/task/{task}', [TaskController::class,'destroy']);
+Route::get('/tasks', [TaskController::class,'index'])->name('tasks.index');;
+Route::post('/task', [TaskController::class,'store'])->name('tasks.store');
+Route::delete('/task/{task}', [TaskController::class,'destroy'])->name('tasks.destroy');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
